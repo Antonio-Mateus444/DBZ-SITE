@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    margin-top: 200px; 
+    overflow-x: hidden; /* Evita a rolagem horizontal */
+}
+
+.background-img {
+    width: 100%;
+    height: 100%;
+    position: fixed; /* Mudança para fixed para que ela ocupe a tela inteira */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Mantém a imagem de fundo atrás do conteúdo */
+}
+
+#cabecalho {
+    position: absolute;
+    top: 20px; 
+    width: 100%; 
+    height: auto; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    backdrop-filter: blur(12px); /* Efeito de vidro fosco */
+    background-color: rgba(0, 0, 0, 0.3); /* Fundo translúcido escuro */
+    padding: 15px 0; 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Sombra mais intensa */
+    z-index: 10; /* Garante que fique acima da imagem */
+}
+
+#menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Espaço entre os itens */
+}
+
+#menu li a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    color: white; 
+    font-size: 18px; 
+    font-weight: bold; /* Negrito */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    position: relative; /* Para os efeitos de animação */
+    padding: 10px; 
+    transition: all 0.3s ease; /* Animação geral */
+}
+
+#menu li a::before, #menu li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #00bfff; 
+    transition: width 0.4s ease;
+}
+
+#menu li a::before {
+    top: 0;
+    left: 0;
+}
+
+#menu li a::after {
+    bottom: 0;
+    right: 0;
+}
+
+#menu li a:hover::before, 
+#menu li a:hover::after {
+    width: 100%; 
+}
+
+#menu li a:hover {
+    color: #00bfff; 
+    text-shadow: 0 0 10px #00bfff, 0 0 20px #007acc; 
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; 
+    background-color: rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#menu li:hover .submenu {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu li a {
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.submenu li a:hover {
+    color: #00bfff;
+    text-shadow: 0 0 10px #00bfff;
+}
+
+.logo-dbz {
+    margin-left: 50px;
+    margin-top: -50px;
+}
+
+.logo-dbz img {
+    width: 100%; 
+    max-width: 450px; 
+    height: auto; 
+    display: block; 
+    margin-bottom: 10px; 
+}
+
+
+.paragrafo {
+    width: 100%;
+    max-width: 450px;
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    text-align: justify;
+    margin-left: 40px;
+    margin-bottom: 15px; 
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #00bfff;
+    transition: all 0.3s ease-in-out;
+}
+
+.paragrafo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+}
+
+.btn-assistir {
+    background-color: #e50914;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 50px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-assistir:hover {
+    background-color: #f40612;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Efeito de pressionar o botão */
+.btn-assistir:active {
+    transform: scale(1);
+}
+
+/*PERSONAGENS*/
+
